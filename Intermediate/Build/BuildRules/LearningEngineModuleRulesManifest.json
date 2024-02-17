@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\UnrealProjects\\LearningEngine\\Source\\LearningEngine\\LearningEngine.Build.cs",
+		"D:\\UnrealProjects\\LearningEngine\\Source\\LearningEngine.Target.cs",
+		"D:\\UnrealProjects\\LearningEngine\\Source\\LearningEngineEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}

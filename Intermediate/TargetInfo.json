@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "LearningEngine",
+			"Path": "..\\Source\\LearningEngine.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "LearningEngineEditor",
+			"Path": "..\\Source\\LearningEngineEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
