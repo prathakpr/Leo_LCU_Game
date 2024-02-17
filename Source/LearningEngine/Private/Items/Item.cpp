@@ -3,8 +3,7 @@
 
 #include "Items/Item.h"
 #include "DrawDebugHelpers.h"
-
-#define THIRTY 30
+#include "LearningEngine/LearningEngine.h"
 
 // Sets default values
 AItem::AItem()
@@ -26,9 +25,7 @@ void AItem::BeginPlay()
 	
 	UWorld* World = GetWorld();
 	FVector Location = GetActorLocation();
-	if (World) {
-		DrawDebugSphere(World, Location, THIRTY, 12, FColor::White, false, 20.f);
-	}
+	Draw_Sphere(Location)
 	
 	
 }
