@@ -25,7 +25,11 @@ void AItem::BeginPlay()
 	
 	UWorld* World = GetWorld();
 	FVector Location = GetActorLocation();
-	Draw_Sphere(Location)
+	Draw_Sphere(Location);
+	Draw_Line(Location);
+	Draw_Point(Location);
+	Draw_VectorBhai(Location, World);
+
 	
 	
 }
