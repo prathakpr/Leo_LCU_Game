@@ -14,13 +14,19 @@ class LEARNINGENGINE_API AItem : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AItem();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Sine Constants")
+	float Amplitude = 0.25f;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Sine Constants")
+	float TimeConstant = 5.f;
+private:
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess="true"))
+	float RunningTimeAngle;
+	
 
 };

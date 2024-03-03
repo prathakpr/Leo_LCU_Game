@@ -38,11 +38,17 @@ void AItem::BeginPlay()
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	RunningTimeAngle += DeltaTime;
+	float DeltaZ = Amplitude*FMath::Sin(RunningTimeAngle*TimeConstant);
+
+
+
 	// Movement Rate = cm/s
 	float MovementRate = 50.f;
 	// MovementRate*DeltaTIme = cm/s * s/f == cm/f
 	AddActorWorldOffset(FVector(MovementRate*DeltaTime, 0.f, 0.f));
-	AddActorWorldRotation(FRotator(0.f, 45.f * DeltaTime, 0.f));
+	AddActorWorldRotation(FRotator(0.f, 45.f * DeltaTime, DeltaZ));
 	Draw_Sphere_SingleFrame(GetActorLocation());
 	Draw_VectorBhai_SingleFrame(GetActorLocation(),GetWorld());
 
