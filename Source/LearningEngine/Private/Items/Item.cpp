@@ -38,8 +38,8 @@ void AItem::BeginPlay()
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	AddActorWorldOffset(FVector(1.f, 0.f, 0.f));
+	float MovementRate = 50.f;
+	AddActorWorldOffset(FVector(MovementRate*DeltaTime, 0.f, 0.f));
 	Draw_Sphere_SingleFrame(GetActorLocation());
 
 	UE_LOG(LogTemp, Warning, TEXT("DELTA TIME : %f"), DeltaTime);
