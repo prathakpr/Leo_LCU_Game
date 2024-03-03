@@ -3,7 +3,7 @@
 
 #include "Items/Item.h"
 #include "DrawDebugHelpers.h"
-#include "LearningEngine/LearningEngine.h"
+#include "LearningEngine/CustomDebugHeader.h"
 
 // Sets default values
 AItem::AItem()
@@ -22,10 +22,14 @@ void AItem::BeginPlay()
 		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Cyan, FString("chaal gyo bhaiyo"));
 	}
 	
-	
+
 	UWorld* World = GetWorld();
 	FVector Location = GetActorLocation();
-	Draw_Sphere(Location)
+	Draw_Sphere(Location);
+	Draw_Line(Location);
+	Draw_Point(Location);
+	Draw_VectorBhai(Location, World);
+
 	
 	
 }
@@ -34,6 +38,10 @@ void AItem::BeginPlay()
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	AddActorWorldOffset(FVector(1.f, 0.f, 0.f));
+	Draw_Sphere_SingleFrame(GetActorLocation());
+
 	UE_LOG(LogTemp, Warning, TEXT("DELTA TIME : %f"), DeltaTime);
 	if (GEngine) {
 		FString Name = GetName();

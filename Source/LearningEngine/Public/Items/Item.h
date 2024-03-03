@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
-#define Draw_Sphere(Location) if(GetWorld()) DrawDebugSphere(GetWorld(),Location,30.f,30,FColor::Green,true);
-
 
 UCLASS()
 class LEARNINGENGINE_API AItem : public AActor
