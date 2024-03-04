@@ -24,9 +24,24 @@ protected:
 	float Amplitude = 0.25f;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Sine Constants")
 	float TimeConstant = 5.f;
+	UFUNCTION(BlueprintPure)
+	float Transformedsin(float value);
+
+	template <typename T >
+	T Avg(T First, T Second);
+
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess="true"))
-	float RunningTimeAngle;
-	
+	float RunningTime;
+
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* ItemMesh; // created an empty pointer
 
 };
+
+template<typename T>
+inline T AItem::Avg(T First, T Second)
+{
+	//these return values can be anything that can be float, int, vectorf etc..
+	return First + Second / 2;
+}

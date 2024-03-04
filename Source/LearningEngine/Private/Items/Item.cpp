@@ -10,18 +10,18 @@ AItem::AItem()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent")); // Factory function ko assign kr rhe hai tem mesh ke pointer mai
+	RootComponent = ItemMesh; // root componet ka pointer garbage mai gya jo unreal delete kr deg automatic
 }
 
 // Called when the game starts or when spawned
 void AItem::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("BEGIN PLAY CHAL GYA BHAYA"));
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Cyan, FString("chaal gyo bhaiyo"));
-	}
-	
+
+	int32 AvgInt = Avg <int32>(1, 3);
+	UE_LOG(LogTemp, Warning, TEXT("Avg of 1 and 3 : %d "),AvgInt)
+
 
 	UWorld* World = GetWorld();
 	FVector Location = GetActorLocation();
@@ -34,31 +34,17 @@ void AItem::BeginPlay()
 	
 }
 
+float AItem::Transformedsin(float value)
+{
+	return Amplitude * FMath::Sin(value * TimeConstant);
+}
+
 // Called every frame
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	RunningTimeAngle += DeltaTime;
-	float DeltaZ = Amplitude*FMath::Sin(RunningTimeAngle*TimeConstant);
-
-
-
-	// Movement Rate = cm/s
-	float MovementRate = 50.f;
-	// MovementRate*DeltaTIme = cm/s * s/f == cm/f
-	AddActorWorldOffset(FVector(MovementRate*DeltaTime, 0.f, 0.f));
-	AddActorWorldRotation(FRotator(0.f, 45.f * DeltaTime, DeltaZ));
-	Draw_Sphere_SingleFrame(GetActorLocation());
-	Draw_VectorBhai_SingleFrame(GetActorLocation(),GetWorld());
-
-	UE_LOG(LogTemp, Warning, TEXT("DELTA TIME : %f"), DeltaTime);
-	if (GEngine) {
-		FString Name = GetName();
-		FString Message = FString::Printf(TEXT("DELTA TIME : %f"), DeltaTime);
-		GEngine->AddOnScreenDebugMessage(1, 1.f, FColor::Red, FString("Chal rhiyo hai tick mai tharo code congo" + Message));
-		GEngine->AddOnScreenDebugMessage(2, 1.f, FColor::Cyan, FString(*Name));
-	}
-
+	RunningTime += DeltaTime;
+	
 }
 
