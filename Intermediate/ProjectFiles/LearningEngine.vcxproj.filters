@@ -11,6 +11,9 @@
     <None Include="..\..\Source\LearningEngineEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +32,9 @@
     <Filter Include="Source\LearningEngine">
       <UniqueIdentifier>{F043AF7F-429A-3F3F-A4E2-C47C40EB3500}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\LearningEngine\CustomDebugHeader.h">
+      <Filter>Source\LearningEngine</Filter>
+    </ClInclude>
     <None Include="..\..\Source\LearningEngine\LearningEngine.Build.cs">
       <Filter>Source\LearningEngine</Filter>
     </None>
@@ -47,6 +53,12 @@
     <ClCompile Include="..\..\Source\LearningEngine\Private\Items\Item.cpp">
       <Filter>Source\LearningEngine\Private\Items</Filter>
     </ClCompile>
+    <Filter Include="Source\LearningEngine\Private\Pawn">
+      <UniqueIdentifier>{8C8608A4-0456-3A7F-AA28-A583C9AA848D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Pawn\Bird.cpp">
+      <Filter>Source\LearningEngine\Private\Pawn</Filter>
+    </ClCompile>
     <Filter Include="Source\LearningEngine\Public">
       <UniqueIdentifier>{F24DE50C-64F1-35F6-B16B-8F7513394844}</UniqueIdentifier>
     </Filter>
@@ -56,8 +68,11 @@
     <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Item.h">
       <Filter>Source\LearningEngine\Public\Items</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\LearningEngine\CustomDebugHeader.h" />
+    <Filter Include="Source\LearningEngine\Public\Pawn">
+      <UniqueIdentifier>{3B76D82C-EC27-30D7-804A-0C54ACABF963}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Pawn\Bird.h">
+      <Filter>Source\LearningEngine\Public\Pawn</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
