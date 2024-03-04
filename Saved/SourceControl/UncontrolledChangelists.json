@@ -6,7 +6,9 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"D:/UnrealProjects/LearningEngine/Content/LEVEL.umap",
-				"D:/UnrealProjects/LearningEngine/Content/BP_Item.uasset"
+				"D:/UnrealProjects/LearningEngine/Content/BP_Item.uasset",
+				"D:/UnrealProjects/LearningEngine/Content/Blueprints/BP_Item.uasset",
+				"D:/UnrealProjects/LearningEngine/Content/Blueprints/Bird.uasset"
 			]
 		}
 	]
