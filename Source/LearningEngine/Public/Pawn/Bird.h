@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "InputActionValue.h"
 #include "Bird.generated.h"
 
 UCLASS()
@@ -22,6 +23,15 @@ public:
 protected:
 	
 	virtual void BeginPlay() override;
+	void MoveForwad(float value);
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input Idhar")
+	class UInputMappingContext* BirdMappingContext;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input Idhar")
+	class UInputAction* MoveAction;
+
+	void Move(const FInputActionValue& value);
+
+private :
 	UPROPERTY(VisibleAnywhere)
 	class UCapsuleComponent* Capsule; //forward declaration
 	UPROPERTY(VisibleAnywhere)
