@@ -13,7 +13,6 @@
     </None>
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -47,6 +46,12 @@
     <Filter Include="Source\LearningEngine\Private">
       <UniqueIdentifier>{3035F20A-E1F3-3256-B3D6-F854DA6932A5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\LearningEngine\Private\Characters">
+      <UniqueIdentifier>{93FEDD4B-6ECB-36B8-9714-8E09E485DD5B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Characters\MyCharacter.cpp">
+      <Filter>Source\LearningEngine\Private\Characters</Filter>
+    </ClCompile>
     <Filter Include="Source\LearningEngine\Private\Items">
       <UniqueIdentifier>{CE4826EF-56B6-3816-81D7-A79EEFC5C8BB}</UniqueIdentifier>
     </Filter>
@@ -62,6 +67,12 @@
     <Filter Include="Source\LearningEngine\Public">
       <UniqueIdentifier>{F24DE50C-64F1-35F6-B16B-8F7513394844}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\LearningEngine\Public\Characters">
+      <UniqueIdentifier>{3002AC94-CE42-33D9-AA43-2392BCDE337D}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\MyCharacter.h">
+      <Filter>Source\LearningEngine\Public\Characters</Filter>
+    </ClInclude>
     <Filter Include="Source\LearningEngine\Public\Items">
       <UniqueIdentifier>{0037FB45-5517-3C38-85D2-A13FEF0B2D13}</UniqueIdentifier>
     </Filter>

@@ -5,9 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/UnrealProjects/LearningEngine/Content/Input/IA_Move.uasset",
-				"D:/UnrealProjects/LearningEngine/Content/Input/IMC_Move.uasset",
-				"D:/UnrealProjects/LearningEngine/Content/Blueprints/Bird.uasset"
+				"D:/UnrealProjects/LearningEngine/Content/Blueprints/Character/BP_MyCharacter.uasset"
 			]
 		}
 	]
