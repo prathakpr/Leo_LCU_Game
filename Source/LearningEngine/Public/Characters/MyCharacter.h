@@ -32,4 +32,9 @@ protected:
 	void Look(const FInputActionValue& value);
 
 private:
+
+	UPROPERTY(VisibleAnywhere)
+	class USpringArmComponent* CameraBoom;
+	UPROPERTY(VisibleAnywhere)
+	class UCameraComponent* ViewCamera;
 };
