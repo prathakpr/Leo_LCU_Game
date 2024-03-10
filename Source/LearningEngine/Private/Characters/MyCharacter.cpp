@@ -6,6 +6,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -15,6 +16,8 @@ AMyCharacter::AMyCharacter()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
+	GetCharacterMovement()->bOrientRotationToMovement = true; 
+	GetCharacterMovement()->RotationRate = FRotator(0.f, 400.f, 0.f);
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("Camera Boom"));
 	CameraBoom->SetupAttachment(GetRootComponent());
 	CameraBoom->TargetArmLength = 300.f;
@@ -37,10 +40,17 @@ void AMyCharacter::BeginPlay()
 void AMyCharacter::Move(const FInputActionValue& value)
 {
 	const FVector2D MoveAxis = value.Get<FVector2D>();
-	const FVector Forward = GetActorForwardVector();
-	AddMovementInput(Forward, MoveAxis.X);
-	const FVector Right = GetActorRightVector();
-	AddMovementInput(Right, MoveAxis.Y);
+	const FRotator ControlRotation = GetControlRotation();
+	const FRotator YawRotation(0.f, ControlRotation.Yaw, 0.f);
+	const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+	AddMovementInput(ForwardDirection, MoveAxis.X);
+	const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+	AddMovementInput(RightDirection, MoveAxis.Y);
+	//const FVector2D MoveAxis = value.Get<FVector2D>();
+	//const FVector Forward = GetActorForwardVector();
+	//AddMovementInput(Forward, MoveAxis.X);
+	//const FVector Right = GetActorRightVector();
+	//AddMovementInput(Right, MoveAxis.Y);
 
 }
 
@@ -67,6 +77,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 	{
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyCharacter::Move);
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMyCharacter::Look);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AMyCharacter::Jump);
 	}
 }
 

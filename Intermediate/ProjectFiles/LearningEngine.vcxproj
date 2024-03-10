@@ -111,6 +111,7 @@
     <None Include="..\..\Source\LearningEngineEditor.Target.cs"/>
     <None Include="..\..\.gitattributes"/>
     <None Include="..\..\.gitignore"/>
+    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
@@ -128,6 +129,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Characters\VijayAnimInstance.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\LearningEngine\Private\Items\Item.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -139,6 +145,7 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\MyCharacter.h"/>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\VijayAnimInstance.h"/>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Item.h"/>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Pawn\Bird.h"/>
   </ItemGroup>

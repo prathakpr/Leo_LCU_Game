@@ -27,6 +27,8 @@ protected:
 	class UInputAction* MoveAction;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "INPUT KA BUTTONS")
 	UInputAction* LookAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "INPUT KA BUTTONS")
+	UInputAction* JumpAction;
 
 	void Move(const FInputActionValue& value);
 	void Look(const FInputActionValue& value);

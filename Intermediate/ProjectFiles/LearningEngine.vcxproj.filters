@@ -13,6 +13,7 @@
     </None>
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -52,6 +53,9 @@
     <ClCompile Include="..\..\Source\LearningEngine\Private\Characters\MyCharacter.cpp">
       <Filter>Source\LearningEngine\Private\Characters</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Characters\VijayAnimInstance.cpp">
+      <Filter>Source\LearningEngine\Private\Characters</Filter>
+    </ClCompile>
     <Filter Include="Source\LearningEngine\Private\Items">
       <UniqueIdentifier>{CE4826EF-56B6-3816-81D7-A79EEFC5C8BB}</UniqueIdentifier>
     </Filter>
@@ -71,6 +75,9 @@
       <UniqueIdentifier>{3002AC94-CE42-33D9-AA43-2392BCDE337D}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\MyCharacter.h">
+      <Filter>Source\LearningEngine\Public\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\VijayAnimInstance.h">
       <Filter>Source\LearningEngine\Public\Characters</Filter>
     </ClInclude>
     <Filter Include="Source\LearningEngine\Public\Items">
