@@ -5,8 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "InputActionValue.h"
+#include "InputAction.h"
 #include "Bird.generated.h"
 
+class UInputAction;
 UCLASS()
 class LEARNINGENGINE_API ABird : public APawn
 {
@@ -27,15 +29,20 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input Idhar")
 	class UInputMappingContext* BirdMappingContext;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input Idhar")
-	class UInputAction* MoveAction;
+	UInputAction* MoveAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input Idhar")
+	UInputAction* LookAction;
 
 	void Move(const FInputActionValue& value);
+	void Look(const FInputActionValue& value);
 
 private :
 	UPROPERTY(VisibleAnywhere)
 	class UCapsuleComponent* Capsule; //forward declaration
 	UPROPERTY(VisibleAnywhere)
 	class USkeletalMeshComponent* BirdMesh;
-	
-	
+	UPROPERTY(VisibleAnywhere)
+	class USpringArmComponent* SpringArm;
+	UPROPERTY(VisibleAnywhere)
+	class UCameraComponent* ViewCamera;
 };
