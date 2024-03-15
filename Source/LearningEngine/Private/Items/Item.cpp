@@ -4,6 +4,7 @@
 #include "Items/Item.h"
 #include "DrawDebugHelpers.h"
 #include "LearningEngine/CustomDebugHeader.h"
+#include "Components/SphereComponent.h"
 
 // Sets default values
 AItem::AItem()
