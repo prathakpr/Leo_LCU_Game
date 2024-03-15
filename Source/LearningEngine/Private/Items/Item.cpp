@@ -13,6 +13,8 @@ AItem::AItem()
 	PrimaryActorTick.bCanEverTick = true;
 	ItemMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ItemMeshComponent")); // Factory function ko assign kr rhe hai tem mesh ke pointer mai
 	RootComponent = ItemMesh; // root componet ka pointer garbage mai gya jo unreal delete kr deg automatic
+	Sphere = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere"));
+	Sphere->SetupAttachment(GetRootComponent());
 }
 
 // Called when the game starts or when spawned
@@ -20,8 +22,7 @@ void AItem::BeginPlay()
 {
 	Super::BeginPlay();
 
-	int32 AvgInt = Avg <int32>(1, 3);
-	UE_LOG(LogTemp, Warning, TEXT("Avg of 1 and 3 : %d "),AvgInt)
+	Sphere->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnSphereOverlap);
 
 
 	UWorld* World = GetWorld();
@@ -38,6 +39,15 @@ void AItem::BeginPlay()
 float AItem::Transformedsin(float value)
 {
 	return Amplitude * FMath::Sin(value * TimeConstant);
+}
+
+void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	const FString OtherActorName = OtherActor->GetName();
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(1, 30.f, FColor::Red, OtherActorName);
+	}
 }
 
 // Called every frame

@@ -29,6 +29,8 @@ protected:
 
 	template <typename T >
 	T Avg(T First, T Second);
+	UFUNCTION() // So that we can bind, and it can exposed to Unreal Reflection System
+	void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess="true"))
@@ -36,6 +38,8 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* ItemMesh; // created an empty pointer
+	UPROPERTY(VisibleAnywhere)
+	class USphereComponent* Sphere;
 
 };
 

@@ -9,6 +9,9 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef LEARNINGENGINE_Item_generated_h
 #error "Item.generated.h already included, missing '#pragma once' in Item.h"
 #endif
@@ -19,6 +22,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Items_Item_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Items_Item_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnSphereOverlap); \
 	DECLARE_FUNCTION(execTransformedsin);
 
 
