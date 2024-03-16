@@ -22,6 +22,7 @@ struct FHitResult;
 #define FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Items_Item_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
 #define FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Items_Item_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnSphereEndOverlap); \
 	DECLARE_FUNCTION(execOnSphereOverlap); \
 	DECLARE_FUNCTION(execTransformedsin);
 

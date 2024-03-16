@@ -112,6 +112,8 @@
     <None Include="..\..\.gitattributes"/>
     <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\README.md"/>
+    <None Include="..\..\Screenshot (69).png"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
     <None Include="..\..\Config\DefaultGame.ini"/>
@@ -139,6 +141,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Items\Weapons\Weapon.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\LearningEngine\Private\Pawn\Bird.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -147,6 +154,7 @@
     <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\MyCharacter.h"/>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\VijayAnimInstance.h"/>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Item.h"/>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Weapons\Weapon.h"/>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Pawn\Bird.h"/>
   </ItemGroup>
   <PropertyGroup>

@@ -14,6 +14,8 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
+    <None Include="..\..\Screenshot (69).png" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -62,6 +64,12 @@
     <ClCompile Include="..\..\Source\LearningEngine\Private\Items\Item.cpp">
       <Filter>Source\LearningEngine\Private\Items</Filter>
     </ClCompile>
+    <Filter Include="Source\LearningEngine\Private\Items\Weapons">
+      <UniqueIdentifier>{C3DC99E1-119B-34B0-8221-05AE4D210650}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\LearningEngine\Private\Items\Weapons\Weapon.cpp">
+      <Filter>Source\LearningEngine\Private\Items\Weapons</Filter>
+    </ClCompile>
     <Filter Include="Source\LearningEngine\Private\Pawn">
       <UniqueIdentifier>{8C8608A4-0456-3A7F-AA28-A583C9AA848D}</UniqueIdentifier>
     </Filter>
@@ -85,6 +93,12 @@
     </Filter>
     <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Item.h">
       <Filter>Source\LearningEngine\Public\Items</Filter>
+    </ClInclude>
+    <Filter Include="Source\LearningEngine\Public\Items\Weapons">
+      <UniqueIdentifier>{7AE8E978-CC9A-3289-8D46-44E9B3EEF5DF}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Items\Weapons\Weapon.h">
+      <Filter>Source\LearningEngine\Public\Items\Weapons</Filter>
     </ClInclude>
     <Filter Include="Source\LearningEngine\Public\Pawn">
       <UniqueIdentifier>{3B76D82C-EC27-30D7-804A-0C54ACABF963}</UniqueIdentifier>

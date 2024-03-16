@@ -29,9 +29,11 @@ protected:
 
 	template <typename T >
 	T Avg(T First, T Second);
-	UFUNCTION() // So that we can bind, and it can exposed to Unreal Reflection System
-	void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-
+	UFUNCTION() // So that we can bind, and it can exposed to Unreal Reflection System (bcz it is a dynamic multi cast delegate)
+	virtual void OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION()
+	virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	/** Delegate for notification when a wake event is fired by physics*/
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess="true"))
 	float RunningTime;
