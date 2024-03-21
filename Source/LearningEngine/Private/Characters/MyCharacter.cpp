@@ -8,6 +8,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Camera/CameraComponent.h"
+#include "items/Item.h"
+#include "Items/Weapons/Weapon.h"
 // Sets default values
 AMyCharacter::AMyCharacter()
 {
@@ -64,6 +66,16 @@ void AMyCharacter::Look(const FInputActionValue& value)
 	}
 }
 
+void AMyCharacter::EKeyPressed(const FInputActionValue& value)
+{
+	AWeapon* OverlappingWeapon = Cast<AWeapon>(OverlappingItem);
+	if (OverlappingWeapon)
+	{
+		OverlappingWeapon->Equip(GetMesh(), FName("RightHandSocket"));
+		CharacterState = ECharacterState::ECS_EquippedOneHandedWeapon;
+	}
+}
+
 void AMyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -78,6 +90,7 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMyCharacter::Move);
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMyCharacter::Look);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AMyCharacter::Jump);
+		EnhancedInputComponent->BindAction(PickupAction, ETriggerEvent::Triggered, this, &AMyCharacter::EKeyPressed);
 	}
 }
 

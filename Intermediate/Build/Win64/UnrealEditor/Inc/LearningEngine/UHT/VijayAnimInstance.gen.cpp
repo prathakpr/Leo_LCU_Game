@@ -15,6 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeVijayAnimInstance() {}
 	LEARNINGENGINE_API UClass* Z_Construct_UClass_AMyCharacter_NoRegister();
 	LEARNINGENGINE_API UClass* Z_Construct_UClass_UVijayAnimInstance();
 	LEARNINGENGINE_API UClass* Z_Construct_UClass_UVijayAnimInstance_NoRegister();
+	LEARNINGENGINE_API UEnum* Z_Construct_UEnum_LearningEngine_ECharacterState();
 	UPackage* Z_Construct_UPackage__Script_LearningEngine();
 // End Cross Module References
 	void UVijayAnimInstance::StaticRegisterNativesUVijayAnimInstance()
@@ -48,6 +49,11 @@ void EmptyLinkFunctionForGeneratedCodeVijayAnimInstance() {}
 #endif
 		static void NewProp_IsFalling_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsFalling;
+		static const UECodeGen_Private::FBytePropertyParams NewProp_CharacterState_Underlying;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CharacterState_MetaData[];
+#endif
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_CharacterState;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -100,11 +106,21 @@ void EmptyLinkFunctionForGeneratedCodeVijayAnimInstance() {}
 		((UVijayAnimInstance*)Obj)->IsFalling = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_IsFalling = { "IsFalling", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UVijayAnimInstance), &Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_IsFalling_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_IsFalling_MetaData), Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_IsFalling_MetaData) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState_MetaData[] = {
+		{ "Category", "Movement | Character State" },
+		{ "ModuleRelativePath", "Public/Characters/VijayAnimInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState = { "CharacterState", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UVijayAnimInstance, CharacterState), Z_Construct_UEnum_LearningEngine_ECharacterState, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState_MetaData), Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState_MetaData) }; // 3110353787
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UVijayAnimInstance_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_MyCharacter,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_MyCharacterMovement,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_GroundSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_IsFalling,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVijayAnimInstance_Statics::NewProp_CharacterState,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UVijayAnimInstance_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UVijayAnimInstance>::IsAbstract,
@@ -145,9 +161,9 @@ void EmptyLinkFunctionForGeneratedCodeVijayAnimInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Characters_VijayAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UVijayAnimInstance, UVijayAnimInstance::StaticClass, TEXT("UVijayAnimInstance"), &Z_Registration_Info_UClass_UVijayAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVijayAnimInstance), 4114776472U) },
+		{ Z_Construct_UClass_UVijayAnimInstance, UVijayAnimInstance::StaticClass, TEXT("UVijayAnimInstance"), &Z_Registration_Info_UClass_UVijayAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVijayAnimInstance), 749372779U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Characters_VijayAnimInstance_h_2573171906(TEXT("/Script/LearningEngine"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Characters_VijayAnimInstance_h_978624821(TEXT("/Script/LearningEngine"),
 		Z_CompiledInDeferFile_FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Characters_VijayAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProjects_LearningEngine_Source_LearningEngine_Public_Characters_VijayAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

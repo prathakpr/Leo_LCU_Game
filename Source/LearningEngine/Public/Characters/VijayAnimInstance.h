@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "Characters/CharacterTypes.h"
 #include "VijayAnimInstance.generated.h"
 
 /**
@@ -26,4 +27,6 @@ public :
 	float GroundSpeed;
 	UPROPERTY(BlueprintReadOnly, Category = "Movement")
 	bool IsFalling;
+	UPROPERTY(BlueprintReadOnly, Category = "Movement | Character State")
+	ECharacterState CharacterState;
 };

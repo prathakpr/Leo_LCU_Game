@@ -5,6 +5,7 @@
 #include "DrawDebugHelpers.h"
 #include "LearningEngine/CustomDebugHeader.h"
 #include "Components/SphereComponent.h"
+#include "Characters/MyCharacter.h"
 
 // Sets default values
 AItem::AItem()
@@ -44,18 +45,19 @@ float AItem::Transformedsin(float value)
 
 void AItem::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	const FString OtherActorName = OtherActor->GetName();
-	if (GEngine)
+	AMyCharacter* MyCharacter = Cast<AMyCharacter>(OtherActor);
+	if (MyCharacter)
 	{
-		GEngine->AddOnScreenDebugMessage(1, 30.f, FColor::Red, OtherActorName);
+		MyCharacter->SetOverlappingItem(this);
 	}
 }
 
 void AItem::OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	if (GEngine)
+	AMyCharacter* MyCharacter = Cast<AMyCharacter>(OtherActor);
+	if (MyCharacter)
 	{
-		GEngine->AddOnScreenDebugMessage(1, 30.f, FColor::Blue, "ESCAPED THE COLLISION");
+		MyCharacter->SetOverlappingItem(nullptr);
 	}
 }
 

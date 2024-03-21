@@ -107,4 +107,9 @@
       <Filter>Source\LearningEngine\Public\Pawn</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\LearningEngine\Public\Characters\CharacterTypes.h">
+      <Filter>Source\LearningEngine\Public\Characters</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

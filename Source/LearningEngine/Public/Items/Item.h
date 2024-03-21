@@ -34,12 +34,13 @@ protected:
 	UFUNCTION()
 	virtual void OnSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	/** Delegate for notification when a wake event is fired by physics*/
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UStaticMeshComponent* ItemMesh; // created an empty pointer
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess="true"))
 	float RunningTime;
 
-	UPROPERTY(VisibleAnywhere)
-	UStaticMeshComponent* ItemMesh; // created an empty pointer
+
 	UPROPERTY(VisibleAnywhere)
 	class USphereComponent* Sphere;
 

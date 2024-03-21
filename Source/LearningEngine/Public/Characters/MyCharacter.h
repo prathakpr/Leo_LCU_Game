@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "InputAction.h"
+#include "Characters/CharacterTypes.h"
 #include "MyCharacter.generated.h"
 
 
@@ -29,14 +30,22 @@ protected:
 	UInputAction* LookAction;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "INPUT KA BUTTONS")
 	UInputAction* JumpAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "INPUT KA BUTTONS")
+	UInputAction* PickupAction;
 
 	void Move(const FInputActionValue& value);
 	void Look(const FInputActionValue& value);
+	void EKeyPressed(const FInputActionValue& value);
 
 private:
-
+	ECharacterState CharacterState = ECharacterState::ECS_Unequipped;
 	UPROPERTY(VisibleAnywhere)
 	class USpringArmComponent* CameraBoom;
 	UPROPERTY(VisibleAnywhere)
 	class UCameraComponent* ViewCamera;
+	UPROPERTY(VisibleInstanceOnly)
+	class AItem* OverlappingItem;
+public :
+	FORCEINLINE void SetOverlappingItem(AItem* Item) { OverlappingItem = Item; }
+	FORCEINLINE ECharacterState GetCharacterState() const { return CharacterState; }
 };
